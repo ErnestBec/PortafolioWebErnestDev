@@ -1,0 +1,195 @@
+:root {
+  /* Declaracion de Paleta de Colores */
+  --color-bg: #faf7f0;
+  --color-font: #181818;
+  --color-principal: #5f9df7;
+  --z-navbar: 5000;
+  --z-icon-menu: 4000;
+}
+* {
+  /* Reinicio de Estilos por defecto de navegadores */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  background-color: var(--color-bg);
+  color: var(--color-font);
+}
+
+/* Estamos diciendo una condicional si la clase es darkTheme coloca estos estilos */
+body.darkTheme {
+  --color-bg: #181818;
+  --color-font: #faf7f0;
+}
+.container_principal {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /*El color sera heredado por su padre*/
+}
+.iconTheme {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.iconShowMenu {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: var(--z-icon-menu);
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 50px;
+  background-color: var(--color-bg);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: var(--z-navbar);
+}
+
+.navbar_menu {
+  display: flex;
+  gap: 1rem; /*Margin inteligenet que solo de le hereda al hujo de flex*/
+}
+@media (max-width: 700px) {
+  .navbar_menu {
+    background-color: var(--color-bg);
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 40vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transform: translateX(-200%);
+    transition: transform 0.5s;
+  }
+  .navbar_menu--show {
+    transform: translateX(0);
+  }
+  .iconShowMenu {
+    display: block;
+  }
+}
+.link {
+  padding: 0.5rem;
+  display: inline-block;
+  border-radius: 0.5rem;
+}
+.link-active {
+  background-color: var(--color-principal);
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.home_title {
+  text-align: center;
+  font-size: 3rem;
+}
+.home_title span {
+  color: var(--color-principal);
+  font-size: 3.2rem;
+}
+.about_img {
+  width: 50%;
+  border-radius: 50%;
+  overflow: hidden; /*Lo que salga  del pasre se oculte*/
+}
+
+.portfolios {
+  /* grid maneja filas y columnas */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-area: 1rem;
+}
+/* .portfolios:nth-child(1) {
+  transfom-delay: 200ms;
+}
+.portfolios:nth-child(2) {
+  transfom-delay: 200ms;
+}
+.portfolios:nth-child(3) {
+  transfom-delay: 200ms;
+} */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form input,
+textarea {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  transition: border 0.5s;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border: 2px solid var(--color-principal);
+}
+.btn {
+  background-color: var(--color-principal);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .portfolios {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px;
+  }
+  .portfolios img {
+    height: 100%;
+    width: 100%;
+  }
+  .form {
+    width: 80%;
+  }
+}
+
+/* ------------------------ */
+.hidden {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.5s, transform 1s;
+}
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}

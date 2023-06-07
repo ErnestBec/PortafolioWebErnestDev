@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>ErnestDev</title>
+  </head>
+  <body>
+    <i class="iconShowMenu bx bx-menu"></i>
+    <nav class="navbar">
+      <span><a href="#home">ErnestDev</a></span>
+      <ul class="navbar_menu">
+        <li><a class="link link-active" href="#home">Inicio</a></li>
+        <li><a class="link" href="#about">Sobre Mí</a></li>
+        <li><a class="link" href="#portfolio">Portafolio</a></li>
+        <li><a class="link" href="#contact">Contacto</a></li>
+        <li class="iconTheme">🌑</li>
+      </ul>
+    </nav>
+    <main class="container_principal">
+      <section id="home" class="hidden">
+        <h1 class="home_title">
+          Hola yo soy <span>Ernesto</span> y soy
+          <span>desarrollador Fron-End</span>
+        </h1>
+      </section>
+      <section id="about" class="hidden">
+        <h1>Quien Soy</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo deleniti
+          ipsa quasi quam debitis earum unde, harum temporibus veritatis
+          quibusdam, et assumenda laboriosam? Quibusdam aspernatur aliquam
+          placeat iusto iste excepturi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          saepe.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          nulla unde molestiae laborum, beatae, illum, magnam quae fuga vel
+          perspiciatis nostrum aliquam. Iure labore perspiciatis corporis
+          repellat dolor quia tempora!
+        </p>
+        <div class="about_img">
+          <img src="./assets/images/portaMe.jpg" alt="Image Ernesto" />
+        </div>
+      </section>
+      <section id="portfolio" class="hidden">
+        <h1>Portafolio</h1>
+        <div class="portfolios">
+          <div class="portfolio">
+            <img src="./assets/images/porta1.jpg" alt="" />
+          </div>
+          <div class="portfolio">
+            <img src="./assets/images/porta2.jpg" alt="" />
+          </div>
+          <div class="portfolio">
+            <img src="./assets/images/porta3.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="hidden">
+        <form class="form">
+          <input
+            type="text"
+            placeholder="Ingresa tu nombre"
+            name="nameUser"
+            id="nameUser"
+            require
+          />
+          <input
+            type="email"
+            placeholder="Ingresa tu correo"
+            name="nameEmail"
+            id="nameEmail"
+            require
+          />
+          <textarea
+            name="commentuser"
+            id="commentUser"
+            cols="30"
+            rows="10"
+            placeholder="Escribeme ..."
+          ></textarea>
+          <button class="btn">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <script src="./Js/main.js"></script>
+  </body>
+</html>
