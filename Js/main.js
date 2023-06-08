@@ -1,12 +1,12 @@
 const hiddenElements = document.querySelectorAll(".hidden");
-const link = document.querySelectorAll(".link");
+const links = document.querySelectorAll(".link");
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-        link.forEach((link) => {
+        links.forEach((link) => {
           const href = link.getAttribute("href").split("#")[1];
           const id = entry.target.id;
           if (href === id) {
@@ -38,6 +38,18 @@ iconShowMenu.addEventListener("click", () => {
   iconShowMenu.classList.remove("bx-x");
 });
 
+links.forEach((link) => {
+  closeMenu(link);
+});
+
+function closeMenu(elementHTML) {
+  elementHTML.addEventListener("click", () => {
+    if (navbarmenu.classList.toggle("navbar_menu--show"))
+      return iconShowMenu.classList.add("bx-x");
+
+    iconShowMenu.classList.remove("bx-x");
+  });
+}
 // darkmode
 
 const iconTheme = document.querySelector(".iconTheme");
