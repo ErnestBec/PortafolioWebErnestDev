@@ -211,7 +211,8 @@ section {
 }
 
 .porfolios {
-  display: grid;
+  display: flex;
+  grid-template-columns: auto;
   width: 80%;
 }
 .portfolio-desktop {
@@ -442,7 +443,7 @@ textarea {
 /* ------------------------ */
 .hidden {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-150px);
   transition: opacity 0.5s, transform 1s;
 }
 .show {

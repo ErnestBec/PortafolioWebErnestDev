@@ -9,6 +9,7 @@ const observer = new IntersectionObserver(
         links.forEach((link) => {
           const href = link.getAttribute("href").split("#")[1];
           const id = entry.target.id;
+
           if (href === id) {
             link.classList.add("link-active");
           } else {
@@ -21,7 +22,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.5,
+    threshold: 0.3,
   }
 );
 
